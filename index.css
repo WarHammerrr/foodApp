@@ -1,0 +1,56 @@
+/* .header{
+    display: flex;
+    border: 2px solid black;
+    justify-content: space-between;
+    margin:10px
+    
+}
+.navitems>ul{
+    list-style-type: none;
+    display: flex;
+    margin-right: 300px;
+    margin-top: 35px;
+}
+.navitems>ul>li {
+    padding:20px;
+       
+   }
+
+.logo{
+    height: 100px;
+}
+.card>img{
+   width:200px;
+   border: 1px solid black;
+  height: 200px;
+}
+.card{
+    border:1px solid black;
+    width:200px;
+    padding:10px;
+   
+    word-wrap:break-word;
+   }
+.body{
+    margin-left:10px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.search-input{
+    margin-left:10px;
+  
+}
+.shimmer-card{
+    width:200px;
+    height:200px;
+    margin:10px;
+    background-color: #D3D3D3
+ 
+}
+.shimmer-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+ */
+ @import "tailwindcss";
