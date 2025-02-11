@@ -1,8 +1,8 @@
 import { image_cdn } from "../constants";
 
-const RestaurantCard = ({ name, avgRating, cuisines, cloudinaryImageId }) => {
- 
-  
+const RestaurantCard = (props) => {
+ const { name, avgRating, cuisines, cloudinaryImageId }=props.resdata
+
   return (
     <div className="h-80 w-60 border-0.5 my-1 mx-1 overflow-hidden shadow-xl shadow-gray-300 rounded-2xl p-3 hover:shadow-2xl transition-shadow duration-300  ">
      
@@ -15,4 +15,6 @@ const RestaurantCard = ({ name, avgRating, cuisines, cloudinaryImageId }) => {
     </div>
   );
 };
+
+
 export default RestaurantCard;

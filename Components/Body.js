@@ -11,7 +11,6 @@ const Body = () => {
   const {isOnline} = UseOnline();
  
 
-  
   const [filteredrestaurants, setFilteredrestaurants] = useState([]);
 
   useEffect(
@@ -26,14 +25,16 @@ const Body = () => {
 
       const json = await data.json();
      
-      console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+     // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+     // console.log(json?.data?.cards[2]?.card?.card);
       const restaurants =
         json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
+        
       if (restaurants) {
         setNewrestaurants(restaurants);
         setFilteredrestaurants(restaurants);
-       
+           
       }
       
     } catch (err) {
@@ -88,9 +89,9 @@ if(isOnline===false){
         // filteredrestaurants != null &&
 
           filteredrestaurants.map((x) => {
-            return <Link to={"/restaurant/"+x.info.id} key={x.info.id}>
-              
-              <RestaurantCard {...x.info}  />
+         
+            return  <Link to={"/restaurant/"+x.info.id} key={x.info.id}>
+             <RestaurantCard resdata={x.info}  />             
               </Link>;
           })}
       </div>
