@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import IMG_CDN from "../constants";
 import Shimmer from "./Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantDetails = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const RestaurantDetails = () => {
 const {name,cloudinaryImageId,city,costForTwoMessage}=restaurants?.cards[2]?.card?.card?.info ||{}
 // console.log(restaurants?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 const categories=restaurants?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item)=> item?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-
+const [showIndex,setShowIndex]=useState(3)
  return !restaurants ? (
     <Shimmer />
   ) : (
@@ -22,7 +23,7 @@ const categories=restaurants?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.card
       
     {/*accordions*/}
 
-    {categories.map(x => <RestaurantCategory  data={x?.card?.card} key={x?.card?.card?.categoryId}/>)}
+    {categories.map((x,index) => <RestaurantCategory index={index} showitem={index==showIndex?true:false} setShowIndex={()=>setShowIndex(index)} data={x?.card?.card} key={x?.card?.card?.categoryId}/>)}
     </div>
     </>
   );
