@@ -6,8 +6,8 @@ return (
 
     
         
-          <div className="flex justify-center items-center min-h-screen bg-gray-200">
-            <div className="w-full max-w-md bg-teal-500 p-6 rounded-lg shadow-xl">
+          <div className="flex justify-center my-4">
+            <div className="w-full max-w-md bg-teal-500 p-6  my-1 rounded-lg shadow-xl">
               <h2 className="text-2xl font-bold text-center mb-4 text-gray-50">Contact Us</h2>
       
               <form>
