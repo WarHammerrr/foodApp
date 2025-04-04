@@ -10,7 +10,6 @@ const RestaurantDetails = () => {
   const restaurants = useGetRestInfo(id);
  
 const {name,cloudinaryImageId,city,costForTwoMessage}=restaurants?.cards[2]?.card?.card?.info ||{}
-// console.log(restaurants?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 const categories=restaurants?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item)=> item?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 const [showIndex,setShowIndex]=useState(3)
  return !restaurants ? (
@@ -19,7 +18,7 @@ const [showIndex,setShowIndex]=useState(3)
     <>
       <div className="text-center my-6">
       <h2 className="font-bold text-lg">{name}</h2>
-      <h4 className="font-medium">Cost:{costForTwoMessage}</h4>
+      <h4 className="font-medium">Cost : {costForTwoMessage}</h4>
       
     {/*accordions*/}
 
